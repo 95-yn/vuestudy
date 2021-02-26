@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app' class='app'  style='color:red;font-size: 20px;'>
+        aa   {{name}}
+        <ul>
+            <li class='li'>
+                {{age}}
+            </li>
+        </ul>
+    </div>
+    <script src="./dist/vue.js"></script>
+    <script>
+        // view  view model model 
+        let vm = new Vue({
+            el: '#app',
+            data() {
+                return {
+                a: {
+                    b:1
+                },
+                name: 'zf',
+                arr: [1,2,3,{
+                    c:'d'
+                }]
+            }
+            }
+        });
+        vm.arr.push({
+            c: [1,2,4,3]
+        });
+        vm.arr[3].c = '4';
+        console.log(vm);
+    </script>
+</body>
+</html>
